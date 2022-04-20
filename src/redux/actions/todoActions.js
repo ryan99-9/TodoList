@@ -34,7 +34,6 @@ export const completedData = (id) => {
             .then(res => {
                 Axios.get('http://localhost:2000/activities')
                     .then(res => {
-                        // kirim res.data ke todoReducer dengan dispatch
                         dispatch({
                             type: 'GET_DATA',
                             payload: res.data

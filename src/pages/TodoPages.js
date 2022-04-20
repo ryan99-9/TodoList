@@ -9,22 +9,21 @@ import ToDoItem from '../component/ToDoItem'
 import { getData,deleteData,completedData,addData } from '../redux/actions'
 import { connect } from 'react-redux'
 
-
-
 class TodoPages extends React.Component {
-  fetchData = () => {
+  fetchData = () => { //yang pertama : get data
     this.props.getData()
   }
 
-  componentDidMount() {
-    this.fetchData()
-  }
+  // componentDidMount() {
+  //   this.fetchData()
+  // }
+  
 
-  onDelete = (id) => {
+  onDelete = (id) => { //yang ke2 : deleteData
     this.props.deleteData(id)
   }
 
-  onComplete = (id) => {
+  onComplete = (id) => { //yang ke3
     this.props.completedData(id)
   }
 
@@ -41,7 +40,7 @@ class TodoPages extends React.Component {
     )
   }
 
-  onAdd = () => {
+  onAdd = () => {//yang ke4 :addData
     let newTodo = this.refs.todo.value
 
     let obj = {
@@ -72,7 +71,7 @@ class TodoPages extends React.Component {
 }
 const styles = {
   container: {
-    padding: '15px'
+    padding: '15px',
   },
   input: {
     width: '25vw',
@@ -82,7 +81,7 @@ const styles = {
 
 const mapStateToProps = (state) => {
   return {
-    listActivity: state.todo.activities,
+    listActivity: state.todo.activities
   }
 }
 export default connect(mapStateToProps, { getData,deleteData,completedData,addData })(TodoPages)
