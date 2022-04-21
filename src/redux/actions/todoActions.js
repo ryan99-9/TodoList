@@ -5,6 +5,7 @@ export const getData = () => {
         Axios.get('http://localhost:2000/activities')
             .then(res => {
                 // kirim res.data ke todoReducer dengan dispatch
+                console.log(res.data)
                 dispatch({
                     type: 'GET_DATA',
                     payload: res.data

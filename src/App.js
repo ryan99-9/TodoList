@@ -1,13 +1,17 @@
 import React from 'react'
 import NavigationBar from './component/Navbar.jsx'
-import TodoPages from './pages/TodoPages'
+import ToDoItem from './component/ToDoItem.jsx'
+// import TodoPages from './pages/TodoPages'
+
+
 
 class App extends React.Component {
   render () {
     return(
       <div>
         <NavigationBar />
-        <TodoPages />
+        <ToDoItem />
+        {/* <TodoPages/> */}
       </div>
     )
   }
